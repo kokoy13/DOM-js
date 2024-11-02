@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .container{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+        }
+        .img-outer{
+            display: flex;
+            gap: 20px;
+        }
+        .action{
+            border-style: solid;
+        }
+        .action:hover{
+            background-color: red;
+        }
+        .action img{
+            width: 150px;
+            padding: 20px;
+        }
+    </style>
+    <title>Batu Gunting Kertas</title>
+</head>
+<body>
+    <div class="container">
+        <div class="img-outer">
+            <div class="action">
+                <img src="img/rock.png" alt="">
+            </div>
+            <div class="action">
+                <img src="img/papper.png" alt="">
+            </div>
+            <div class="action">
+                <img src="img/scissor.png" alt="">
+            </div>
+        </div>
+        <div>
+            <h1>VS</h1>
+        </div>
+        <div>
+            <h1>...</h1>
+        </div>
+    </div>
+</body>
+</html>
