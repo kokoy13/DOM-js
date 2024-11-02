@@ -4,58 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        html body{
-            width: 100%;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            overflow-x: hidden;
-        }
-        .container{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin: 40px;
-        }
-        .content{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .my-outer{
-            display: flex;
-            gap: 20px;
-        }
-        .action{
-            border-style: solid;
-            transition-duration: 500ms;
-            cursor: pointer; 
-        }
-        .action:active{
-            background-color: blue;
-        }
-        .action:hover{
-            transform: scale(1.2);
-            background-color: red;
-        }
-        .action img{
-            width: 150px;
-            padding: 20px;
-        }
-        header{
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-        }
-        h2{
-            margin: 40px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
     <title>Batu Gunting Kertas</title>
 </head>
 <body>
@@ -63,24 +12,29 @@
         <header>
             <h2>Score : <span>0</span></h2>
         </header>
-        <div class="content">
-            <h1>Game Suit BTK</h1>
-            <div class="my-outer">
-                <div class="action" id="rock">
-                    <img src="img/rock.png" alt="">
+        <div class="content-outer">
+            <div class="content">
+                <h1>Game Suit BTK</h1>
+                <div class="my-outer">
+                    <div class="action" id="rock">
+                        <img src="img/rock.png" alt="">
+                    </div>
+                    <div class="action" id="paper">
+                        <img src="img/paper.png" alt="">
+                    </div>
+                    <div class="action" id="scissor">
+                        <img src="img/scissor.png" alt="">
+                    </div>
                 </div>
-                <div class="action" id="paper">
-                    <img src="img/paper.png" alt="">
+                <div>
+                    <h1>VS</h1>
                 </div>
-                <div class="action" id="scissor">
-                    <img src="img/scissor.png" alt="">
+                <div class="com-outer">
+                    <h1>...</h1>
                 </div>
             </div>
-            <div>
-                <h1>VS</h1>
-            </div>
-            <div class="com-outer">
-                <h1>...</h1>
+            <div class="replay">
+                <img src="img/reset.png" alt="">
             </div>
         </div>
     </div>
