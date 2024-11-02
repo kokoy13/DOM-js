@@ -43,9 +43,8 @@ sBlue.addEventListener('input', function(){
 });
 
 document.body.addEventListener('mousemove', function (event) {
-    const xPost = Math.floor((event.clientX / window.innerWidth) * 255);
+     const xPost = Math.floor((event.clientX / window.innerWidth) * 255);
     const yPost = Math.floor((event.clientY / window.innerHeight) * 255);
-    document.body.style.backgroundColor = 'rgb('+xPost, yPost,+'0)';
-
+    document.body.style.backgroundColor = 'rgb('+xPost+','+yPost+',0)';
 });
 
