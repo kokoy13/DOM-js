@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bermain Warna</title>
+    <style>
+        html body{
+            width: 100vw;
+            height: 100vh;
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .green{
+            background-color: green;
+        }
+        .box{
+            padding: 10px;
+            width: max-content;
+        }
+        .slider{
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        .box-1{
+            background-color: red;
+        }
+        .box-2{
+            background-color: green;
+        }
+        .box-3{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bermain Warna</h1>
+        <div class="button">
+            <button id="uWarna" type="button">Ubah Warna</button>
+        </div>
+        <div class="slider">
+            <div class="box box-1">
+
+            </div>
+            <input type="range" name="sRed" min="0" max="255">
+        </div>
+        <div class="slider">
+            <div class="box box-2">
+
+            </div>
+            <input type="range" name="sGreen" min="0" max="255">
+        </div>
+        <div class="slider">
+            <div class="box box-3">
+
+            </div>
+            <input type="range" name="sBlue" min="0" max="255">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
