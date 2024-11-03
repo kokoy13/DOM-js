@@ -10,7 +10,10 @@ const comOuter = document.querySelector('.com-outer');
 const text = comOuter.querySelector('h1');
 const score = document.querySelector('h2 span');
 const replay = document.querySelector('.replay');
-const title = document.querySelector('.content-outer .content h1'); 
+const title = document.querySelector('.content-outer .content h1');
+let myAction;
+let comAction;
+
 let scoreValue = 0;
 
 //Random Computer Action
@@ -67,56 +70,54 @@ function Condition(my, com){
     }
 }
 
-
-//Event
-rock.addEventListener('click',function () {
-    const myAction = 'rock';
-    const comAction = parsImg();
-    outer.removeChild(paper);
-    outer.removeChild(scissor);
-    rock.style.backgroundColor = 'red';
-    rock.style.transform = 'scale(1)';
-    rock.style.cursor = 'auto';
+//Action Handler
+function actionHandler(act, rm, rm2, actStyle){
+    myAction = act;
+    comAction = parsImg();
+    outer.removeChild(rm);
+    outer.removeChild(rm2);
+    actStyle.classList.remove('action');
+    actStyle.style.borderStyle = 'solid';
+    actStyle.style.backgroundColor = 'red';
     comOuter.removeChild(text);
     comOuter.appendChild(comAction);
+    comAction.classList.remove('action');
+    comAction.style.borderStyle = 'solid';
     comAction.style.backgroundColor = 'red';
-    comAction.style.transform = 'scale(1)';
-    comAction.style.cursor = 'auto';
     replay.style.display = 'flex';
     Condition(myAction, comAction);
-},{ once: true });
+}
+
+//Replay Event
+replay.addEventListener('click', function(){
+    myAction = null;
+    outer.appendChild(rock);
+    outer.appendChild(paper);
+    outer.appendChild(scissor);
+    rock.style.backgroundColor = 'white';
+    paper.style.backgroundColor = 'white';
+    scissor.style.backgroundColor = 'white';
+    rock.classList.add('action');
+    paper.classList.add('action');
+    scissor.classList.add('action');
+    comOuter.appendChild(text);
+    comOuter.removeChild(comAction);
+    replay.style.display = 'none';
+    title.innerHTML = 'Game Suit BTK';
+});
+
+//Action Events
+rock.addEventListener('click',function () {
+    actionHandler('rock',paper,scissor,rock);
+});
 
 paper.addEventListener('click',function () {
-    const myAction = 'paper';
-    const comAction = parsImg();
-    outer.removeChild(rock);
-    outer.removeChild(scissor);
-    paper.style.backgroundColor = 'red';
-    paper.style.transform = 'scale(1)';
-    paper.style.cursor = 'auto';
-    comOuter.removeChild(text);
-    comOuter.appendChild(comAction);
-    comAction.style.backgroundColor = 'red';
-    comAction.style.transform = 'scale(1)';
-    comAction.style.cursor = 'auto';
-    replay.style.display = 'flex';
-    Condition(myAction, comAction);
-},{ once: true });
+    actionHandler('paper',rock,scissor,paper);
+});
 
 scissor.addEventListener('click',function () {
-    const myAction = 'scissor';
-    const comAction = parsImg();
-    outer.removeChild(paper);
-    outer.removeChild(rock);
-    scissor.style.backgroundColor = 'red';
-    scissor.style.transform = 'scale(1)';
-    scissor.style.cursor = 'auto';
-    comOuter.removeChild(text);
-    comOuter.appendChild(comAction);
-    comAction.style.backgroundColor = 'red';
-    comAction.style.transform = 'scale(1)';
-    comAction.style.cursor = 'auto';
-    replay.style.display = 'flex';
-    Condition(myAction, comAction);
-},{ once: true });
+    actionHandler('scissor',rock,paper,scissor);
+});
+
+
 

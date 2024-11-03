@@ -28,14 +28,10 @@
             transition-duration: 500ms;
             cursor: pointer; 
         }
-        .action:active{
-            background-color: blue;
-        }
         .action:hover{
             transform: scale(1.2);
-            background-color: red;
         }
-        .action img{
+        .choose img{
             width: 150px;
             padding: 20px;
         }
