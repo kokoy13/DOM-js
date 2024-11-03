@@ -1,0 +1,29 @@
+.card{
+    display: flex;
+    margin: 20px;
+    background-color: aliceblue;
+    gap: 30px;
+    align-items: center;
+    border-radius: 50px;
+    width: max-content;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    margin: 0 100px;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.profile img{
+    width: 100px;
+    border-radius: 50px;
+}
+.close{
+    padding: 0 20px;
+}
+svg{
+    cursor: pointer;
+}
+.card:hover svg{
+    color: red;
+}
